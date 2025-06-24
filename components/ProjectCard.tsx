@@ -11,7 +11,6 @@ interface ProjectCardProps {
   image: string;
   github?: string;
   website?: string;
-  tags?: string;
 }
 
 export default function ProjectCard({
@@ -21,29 +20,27 @@ export default function ProjectCard({
   image,
   github,
   website,
-  tags,
 }: ProjectCardProps) {
   return (
-    <div className="cursor-pointer">
-      <Link href={`/portfolio/${id}`}>
-        <div className="overflow-hidden w-full h-64 rounded-sm">
-          <motion.img
-            src={image}
-            alt={title}
-            className="w-full h-full object-cover"
-            initial={{ scale: 1.3, rotate: 5, opacity: 0 }}
-            animate={{ scale: 1, rotate: 0, opacity: 1 }}
-            transition={{ duration: 0.9, ease: "easeOut" }}
-          />
-        </div>
+    <div className="cursor-pointer flex flex-col h-full">
+      <Link
+        href={`/portfolio/${id}`}
+        className="block overflow-hidden rounded-lg shadow"
+      >
+        <motion.img
+          src={image}
+          alt={title}
+          className="w-full h-56 object-cover"
+          initial={{ scale: 1.1, rotate: 2, opacity: 0 }}
+          animate={{ scale: 1, rotate: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        />
       </Link>
 
-      <div className="mt-4">
-        <p className="text-sm italic text-gray-500">{tags}</p>
-
+      <div className="flex-1 mt-4">
         <div className="flex justify-between items-start">
-          <h3 className="text-xl font-semibold mt-1">{title}</h3>
-          <div className="flex gap-3 text-gray-600 text-base mt-1">
+          <h3 className="text-lg font-semibold">{title}</h3>
+          <div className="flex gap-3 text-gray-600 text-base">
             {website && (
               <a href={website} target="_blank" rel="noopener noreferrer">
                 <FaExternalLinkAlt />

@@ -38,7 +38,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link href="/">
-          <div className="text-xl font-bold text-gray-800">jGabriel</div>
+          <div className="text-xl font-bold text-gray-800">RashidulAS</div>
         </Link>
 
         {/* Desktop Nav */}

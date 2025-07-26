@@ -22,7 +22,7 @@ export default function Hero() {
       <div className="relative z-20 flex flex-col items-center px-4">
         <div className="w-36 h-36 md:w-40 md:h-40 border-4 border-white rounded-full overflow-hidden mb-6">
           <Image
-            src="/profile.jpg" // 👈 Replace with your profile image
+            src="/ras.jpg" // 👈 Replace with your profile image
             alt="Profile"
             width={160}
             height={160}
@@ -31,10 +31,10 @@ export default function Hero() {
         </div>
 
         <h1 className="text-2xl md:text-4xl font-bold">
-          Hello I'm Jorge Gabriel Azevedo
+          Hello I'm Md Rashidul Alam Sami
         </h1>
         <p className="text-base md:text-lg mt-2">
-          I'm a passionate Web Developer
+          I'm a passionate Software Engineer
         </p>
       </div>
     </section>

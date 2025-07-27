@@ -1,6 +1,9 @@
+import { Metadata } from "next";
 import { projects } from "@/data/projects";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+
+// ✅ Import type from Next.js;
 
 export function generateStaticParams() {
   return projects.map((project) => ({
@@ -8,13 +11,7 @@ export function generateStaticParams() {
   }));
 }
 
-type PageProps = {
-  params: {
-    id: string;
-  };
-};
-
-export default function ProjectPage({ params }: PageProps) {
+export default function ProjectPage({ params }: { params: { id: string } }) {
   const project = projects.find((p) => p.id === params.id);
   if (!project) return notFound();
 

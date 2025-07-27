@@ -114,14 +114,14 @@ export const projects = [
     id: "cooknote",
     title: "CookNote",
     description: "..",
-    image: "/project/.png",
+    image: "/project/cook.png",
     tags: "Firebase, MATLAB, HealthKit API, Visualization",
   },
   {
     id: "hiremailer",
     title: "HireMailer",
     description: "..",
-    image: "/project/.png",
+    image: "/project/hairem.png",
     tags: "Firebase, MATLAB, HealthKit API, Visualization",
   },
   {
@@ -135,7 +135,7 @@ export const projects = [
     id: "minify",
     title: "Minify",
     description: "..",
-    image: "/project/.png",
+    image: "/project/minify.png",
     tags: "Firebase, MATLAB, HealthKit API, Visualization",
   },
 ];

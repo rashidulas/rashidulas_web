@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { projects } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
+import AchievementsSection from "@/components/AchievementsSection";
 
 export default function PortfolioPage() {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
@@ -78,6 +79,7 @@ export default function PortfolioPage() {
           </div>
         </div>
       </section>
+      <AchievementsSection />
     </main>
   );
 }

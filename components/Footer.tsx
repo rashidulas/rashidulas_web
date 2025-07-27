@@ -12,7 +12,7 @@ export default function Footer() {
         <p className="mb-6 text-lg">Find me on social media</p>
         <div className="flex justify-center gap-6">
           <a
-            href="https://github.com"
+            href="https://github.com/rashidulas"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -22,14 +22,14 @@ export default function Footer() {
             <SiX className="text-2xl hover:text-black" />
           </a>
           <a
-            href="https://instagram.com"
+            href="https://instagram.co/rashidul___"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaInstagram className="text-2xl hover:text-pink-500" />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://linkedin.com/in/rashidulas"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -40,7 +40,7 @@ export default function Footer() {
 
       {/* Footer bar */}
       <div className="bg-[#0B0F1A] text-sm text-gray-400 py-6">
-        © 2025 Jorge Gabriel Azevedo.{" "}
+        © 2025 Md Rashidul Alam Sami.{" "}
         <a href="/legal" className="text-blue-400 hover:underline">
           Legal Disclaimer
         </a>

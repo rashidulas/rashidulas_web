@@ -42,9 +42,9 @@ export default function CertificationsSection() {
           {certifications.map((cert, index) => (
             <div
               key={index}
-              className="border-l-4 border-blue-600 pl-6 relative"
+              className="border-l-4 border-grey-600 pl-6 relative"
             >
-              <div className="absolute top-0 -left-2 w-4 h-4 bg-blue-600 rounded-full shadow-lg" />
+              <div className="absolute top-0 -left-2 w-4 h-4 bg-white rounded-full shadow-lg" />
               <h3 className="text-xl font-semibold">{cert.name}</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 Issued by <strong>{cert.issuer}</strong> · {cert.issueDate}
@@ -54,7 +54,7 @@ export default function CertificationsSection() {
                   href={cert.credentialUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block mt-2 text-blue-600 hover:underline text-sm font-medium"
+                  className="inline-block mt-2 text-white-600 hover:underline text-sm font-medium"
                 >
                   View Credential →
                 </a>

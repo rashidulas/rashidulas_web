@@ -10,7 +10,7 @@ export default function AboutSection() {
       {/* Profile Image with grayscale hover effect */}
       <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-lg shadow-lg overflow-hidden group">
         <Image
-          src="/ras.JPG" // replace with your image
+          src="/ras.jpg" // replace with your image
           alt="Profile"
           fill
           className="transition-all duration-500 ease-in-out grayscale group-hover:grayscale-0 group-hover:scale-105 object-cover"

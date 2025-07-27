@@ -8,18 +8,21 @@ export function generateStaticParams() {
   }));
 }
 
+// ✅ PageProps is just a plain object, NOT a Promise
 type PageProps = {
   params: {
     id: string;
   };
 };
 
+// ✅ Function should NOT be async!
 export default function ProjectPage({ params }: PageProps) {
   const project = projects.find((p) => p.id === params.id);
   if (!project) return notFound();
 
   return (
     <div className="w-full bg-white text-gray-800 py-12 px-4 sm:px-6 lg:px-16 space-y-12">
+      {/* Optimized Next.js Image */}
       <div className="w-full max-w-7xl mx-auto relative h-[500px]">
         <Image
           src={project.image}

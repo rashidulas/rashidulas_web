@@ -2,19 +2,8 @@ import { projects } from "@/data/projects";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 
-type Props = {
-  params: {
-    id: string;
-  };
-};
-
-export async function generateStaticParams() {
-  return projects.map((project) => ({
-    id: project.id,
-  }));
-}
-
-export default function ProjectPage({ params }: Props) {
+// ✅ Accept `params` as a destructured argument directly
+export default function ProjectPage({ params }: { params: { id: string } }) {
   const project = projects.find((p) => p.id === params.id);
   if (!project) return notFound();
 

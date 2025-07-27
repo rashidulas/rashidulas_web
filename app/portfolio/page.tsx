@@ -4,9 +4,11 @@ import { useState } from "react";
 import { projects } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
 import AchievementsSection from "@/components/AchievementsSection";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 export default function PortfolioPage() {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [showDropdown, setShowDropdown] = useState(false);
 
   const allTags = Array.from(
     new Set(
@@ -47,8 +49,8 @@ export default function PortfolioPage() {
             </p>
           </div>
 
-          {/* Filter Buttons */}
-          <div className="flex flex-wrap justify-center sm:justify-start gap-3">
+          {/* Desktop View */}
+          <div className="hidden sm:flex flex-wrap justify-center sm:justify-start gap-3">
             {allTags.map((tag) => (
               <button
                 key={tag}
@@ -62,6 +64,37 @@ export default function PortfolioPage() {
                 {tag}
               </button>
             ))}
+          </div>
+
+          {/* Mobile View Dropdown */}
+          <div className="sm:hidden">
+            <button
+              onClick={() => setShowDropdown((prev) => !prev)}
+              className="w-full flex justify-between items-center px-4 py-3 border border-gray-300 rounded-md bg-white shadow-sm text-sm font-medium"
+            >
+              {selectedTags.length === 0
+                ? "Select tech stacks"
+                : `${selectedTags.length} selected`}
+              {showDropdown ? <FaChevronUp /> : <FaChevronDown />}
+            </button>
+
+            {showDropdown && (
+              <div className="mt-3 p-4 border border-gray-300 rounded-md bg-white shadow grid grid-cols-2 gap-3">
+                {allTags.map((tag) => (
+                  <button
+                    key={tag}
+                    onClick={() => toggleTag(tag)}
+                    className={`w-full px-3 py-2 rounded-full border text-xs font-medium transition-all ${
+                      selectedTags.includes(tag)
+                        ? "bg-black text-white border-black shadow-sm"
+                        : "bg-white text-black border-gray-300 hover:bg-gray-100"
+                    }`}
+                  >
+                    {tag}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>

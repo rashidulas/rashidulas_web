@@ -20,16 +20,15 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-20 flex flex-col items-center px-4">
-        <div className="w-36 h-36 md:w-40 md:h-40 border-4 border-white rounded-full overflow-hidden mb-6">
+        <div className="w-44 h-44 md:w-52 md:h-52 border-4 border-white rounded-full overflow-hidden mb-6">
           <Image
-            src="/ras.jpg" // 👈 Replace with your profile image
+            src="/ras.jpg"
             alt="Profile"
-            width={160}
-            height={160}
+            width={250}
+            height={250}
             objectFit="cover"
           />
         </div>
-
         <h1 className="text-2xl md:text-4xl font-bold">
           Hello I'm Md Rashidul Alam Sami
         </h1>

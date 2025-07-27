@@ -12,8 +12,8 @@ const education = [
       "Focused on software engineering, algorithms, and data structures. Graduated with honors and participated in various research projects.",
     achievements: [
       "Dean's List",
-      "Magna Cum Laude",
-      "Computer Science Excellence Award",
+      "Maverick Academic Scholarship",
+      "Freshman Honor Roll",
     ],
     image: "/uta.jpg",
     gpa: "3.7/4.0",
@@ -23,13 +23,7 @@ const education = [
     institution: "Notre Dame College",
     location: "Dhaka, Bangladesh",
     period: "2019-2021",
-    description:
-      "Comprehensive program covering modern web development technologies and best practices with hands-on projects.",
-    achievements: [
-      "JavaScript Algorithms Certificate",
-      "Frontend Libraries Certificate",
-      "Backend Development Certificate",
-    ],
+
     image: "/ndc.jpeg", // Replace with your image
   },
   {
@@ -37,13 +31,7 @@ const education = [
     institution: "Dhaka Residential Model College",
     location: "Dhaka, Bangladesh",
     period: "2011-2019",
-    description:
-      "Comprehensive program covering modern web development technologies and best practices with hands-on projects.",
-    achievements: [
-      "JavaScript Algorithms Certificate",
-      "Frontend Libraries Certificate",
-      "Backend Development Certificate",
-    ],
+
     image: "/drmc.jpeg",
   },
 ];

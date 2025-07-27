@@ -11,19 +11,14 @@ const certifications: Certification[] = [
   {
     name: "Microsoft Certified: Azure Fundamentals",
     issuer: "Microsoft",
-    issueDate: "June 2023",
+    issueDate: "June 2025",
     credentialUrl: "https://www.credly.com/badges/your-link",
   },
   {
-    name: "Deep Learning Specialization",
-    issuer: "DeepLearning.AI / Coursera",
+    name: "CS50: Computer Science Courses and Programs from Harvard",
+    issuer: "Harvard University",
     issueDate: "April 2023",
     credentialUrl: "https://www.coursera.org/account/accomplishments/your-link",
-  },
-  {
-    name: "Google IT Support Professional Certificate",
-    issuer: "Google",
-    issueDate: "December 2022",
   },
 ];
 

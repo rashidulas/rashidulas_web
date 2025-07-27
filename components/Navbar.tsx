@@ -29,6 +29,17 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const navTextColor = (url: string) => {
+    if (isHome && !scrolled) return "text-white hover:text-gray-200";
+    if (pathname === url) return "text-black";
+    return "text-gray-600 hover:text-black";
+  };
+
+  const iconColor =
+    isHome && !scrolled
+      ? "text-white hover:text-gray-200"
+      : "text-gray-700 hover:text-black";
+
   return (
     <nav
       className={`fixed top-0 w-full z-50 px-6 py-4 transition-all duration-500 ease-in-out ${
@@ -40,7 +51,7 @@ export default function Navbar() {
         <Link href="/">
           <div
             className={`text-xl font-bold ${
-              isHome ? "text-black" : "text-gray-800"
+              isHome && !scrolled ? "text-white" : "text-black"
             }`}
           >
             RashidulAS
@@ -56,26 +67,18 @@ export default function Navbar() {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`text-sm font-medium transition-colors ${
-                    isHome
-                      ? "text-black hover:text-gray-700"
-                      : pathname === link.url
-                      ? "text-black"
-                      : "text-gray-600 hover:text-black"
-                  }`}
+                  className={`text-sm font-medium transition-colors ${navTextColor(
+                    link.url
+                  )}`}
                 >
                   {link.title}
                 </a>
               ) : (
                 <Link
                   href={link.url}
-                  className={`text-sm font-medium transition-colors ${
-                    isHome
-                      ? "text-black hover:text-gray-700"
-                      : pathname === link.url
-                      ? "text-black"
-                      : "text-gray-600 hover:text-black"
-                  }`}
+                  className={`text-sm font-medium transition-colors ${navTextColor(
+                    link.url
+                  )}`}
                 >
                   {link.title}
                 </Link>
@@ -88,28 +91,14 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaGithub
-                className={
-                  isHome
-                    ? "text-black hover:text-gray-700"
-                    : "text-gray-700 hover:text-black"
-                }
-                size={18}
-              />
+              <FaGithub className={iconColor} size={18} />
             </a>
             <a
               href="https://linkedin.com/in/rashidulas"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaLinkedin
-                className={
-                  isHome
-                    ? "text-black hover:text-gray-700"
-                    : "text-gray-700 hover:text-black"
-                }
-                size={18}
-              />
+              <FaLinkedin className={iconColor} size={18} />
             </a>
           </li>
         </ul>

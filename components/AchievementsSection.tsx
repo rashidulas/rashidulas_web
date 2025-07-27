@@ -12,32 +12,32 @@ interface Achievement {
 
 const achievements: Achievement[] = [
   {
-    title: "1st Place – Dartmouth X Hackathon",
-    event: "Dartmouth College",
-    date: "Apr 2025",
+    title: "Best AI Application Built with Cloudflare",
+    event: "HackTX 2024",
+    date: "November 2024",
     description:
-      "Built Lumina, an AI-powered academic advisor in 24 hours. Won the grand prize among 200+ participants.",
+      "Build FleetPulse, an AI-powered web application that optimizes routes, monitors vehicle health, and educates drivers on eco-friendly practices",
   },
   {
-    title: "Finalist – Google Solution Challenge",
-    event: "Google Developers",
-    date: "Jul 2024",
+    title: "Main Track Winner & Best AI Project with Databricks Open Source",
+    event: "HackUTA 6",
+    date: "October 2024",
     description:
-      "Developed an AI app recommending healthy food based on medication. Reached final 10 globally.",
+      "Developed Waste.0 is a web application that uses AI-driven insights to help food business owners and donation centers minimize food waste.",
   },
   {
-    title: "Best Design – UT Austin Hackathon",
-    event: "HackTX",
-    date: "Oct 2023",
+    title: "Best Use of MongoDB Atlas",
+    event: "HackSMU VI",
+    date: "October 2024",
     description:
-      "Created a decentralized donation tracker with blockchain integration. Recognized for UI/UX excellence.",
+      "Created LegalAI allows users to upload legal documents and instantly receive a comprehensive analysis powered by advanced AI models.",
   },
   {
-    title: "Top 3 – Shellhacks",
-    event: "Florida Intl. Univ.",
+    title: "Best Use of MATLAB",
+    event: "HackUTA 2023",
     date: "Sept 2023",
     description:
-      "Built a real-time facial recognition attendance system using OpenCV and Firebase.",
+      "Built a is a tool dedicated to the early detection of lung cancer and the cure.",
   },
 ];
 

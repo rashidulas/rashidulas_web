@@ -29,28 +29,33 @@ export default function AboutSection() {
 
         {/* Tag Badges */}
         <div className="flex flex-wrap justify-center md:justify-start gap-2 mt-4">
-          {["Frontend Developer", "React Specialist", "UI/UX Designer"].map(
-            (tag) => (
-              <span
-                key={tag}
-                className="px-3 py-1 sm:px-4 border border-black rounded-full text-xs sm:text-sm font-medium transition duration-300 hover:bg-black hover:text-white cursor-pointer"
-              >
-                {tag}
-              </span>
-            )
-          )}
+          {[
+            "Full Stack Developer",
+            "React Specialist",
+            "Mobile App Developer",
+          ].map((tag) => (
+            <span
+              key={tag}
+              className="px-3 py-1 sm:px-4 border border-black rounded-full text-xs sm:text-sm font-medium transition duration-300 hover:bg-black hover:text-white cursor-pointer"
+            >
+              {tag}
+            </span>
+          ))}
         </div>
 
         {/* Description */}
         <p className="mt-6 text-gray-700 text-sm sm:text-base leading-relaxed px-1 sm:px-0">
-          Passionate full-stack developer with 5+ years of experience building
-          modern web applications. I create intuitive user interfaces and solve
-          complex problems through clean, efficient code.
+          I’m a full-stack developer with 4 years of experience building
+          scalable, modern web applications—now focused on creating AI-powered
+          solutions. I combine clean, efficient code with intuitive UI/UX to
+          develop products that not only work seamlessly but also deliver
+          meaningful impact.
         </p>
         <p className="mt-4 text-gray-700 text-sm sm:text-base leading-relaxed px-1 sm:px-0">
-          Currently focused on React, TypeScript, and modern web technologies.
-          Always eager to learn new technologies and contribute to innovative
-          projects.
+          I enjoy turning innovative ideas into polished, real-world products.
+          Driven by curiosity and purpose, I’m always exploring new technologies
+          and seeking projects that solve real problems and push the boundaries
+          of what’s possible with AI.
         </p>
 
         {/* Buttons */}

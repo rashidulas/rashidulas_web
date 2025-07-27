@@ -1,7 +1,21 @@
 import { projects } from "@/data/projects";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 
-export default function ProjectPage({ params }: { params: { id: string } }) {
+// Required for dynamic routing in App Router
+export async function generateStaticParams() {
+  return projects.map((project) => ({
+    id: project.id,
+  }));
+}
+
+type ProjectPageProps = {
+  params: {
+    id: string;
+  };
+};
+
+export default function ProjectPage({ params }: ProjectPageProps) {
   const project = projects.find((p) => p.id === params.id);
   if (!project) return notFound();
 
@@ -9,9 +23,11 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
     <div className="w-full bg-white text-gray-800 py-12 px-4 sm:px-6 lg:px-16 space-y-12">
       {/* Project Image */}
       <div className="w-full max-w-7xl mx-auto">
-        <img
+        <Image
           src={project.image}
           alt={project.title}
+          width={1280}
+          height={720}
           className="rounded-lg w-full object-cover max-h-[500px] shadow-md"
         />
       </div>

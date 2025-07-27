@@ -1,6 +1,7 @@
 "use client";
 
 import { MapPin, Star, BookOpen } from "lucide-react";
+import Image from "next/image";
 
 const education = [
   {
@@ -23,15 +24,13 @@ const education = [
     institution: "Notre Dame College",
     location: "Dhaka, Bangladesh",
     period: "2019-2021",
-
-    image: "/ndc.jpeg", // Replace with your image
+    image: "/ndc.jpeg",
   },
   {
     degree: "Science",
     institution: "Dhaka Residential Model College",
     location: "Dhaka, Bangladesh",
     period: "2011-2019",
-
     image: "/drmc.jpeg",
   },
 ];
@@ -58,7 +57,6 @@ export function EducationSection() {
 
         {/* Timeline */}
         <div className="space-y-20 relative">
-          {/* Vertical line (centered under numbers) */}
           <div className="absolute left-6 top-14 bottom-0 w-px bg-gray-300 hidden sm:block" />
 
           {education.map((edu, i) => (
@@ -68,7 +66,6 @@ export function EducationSection() {
             >
               {/* Left: Timeline + Content */}
               <div className="relative flex-1">
-                {/* Numbered dot */}
                 <div className="relative z-10 flex items-center gap-3 mb-4 sm:mb-0 sm:ml-[-6px]">
                   <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center font-bold z-20">
                     {i + 1}
@@ -78,12 +75,10 @@ export function EducationSection() {
                   </span>
                 </div>
 
-                {/* Vertical line segment under this dot (only if not last) */}
                 {i < education.length - 1 && (
                   <div className="absolute top-10 left-[1.125rem] h-[calc(100%-2.5rem)] w-px bg-gray-300 hidden sm:block" />
                 )}
 
-                {/* Degree Details */}
                 <div className="mt-6 space-y-3 sm:mt-0 sm:ml-16">
                   <h3 className="text-xl font-bold">{edu.degree}</h3>
                   <h4 className="text-lg">{edu.institution}</h4>
@@ -125,11 +120,13 @@ export function EducationSection() {
 
               {/* Right: Image */}
               <div className="w-full lg:w-[40%] mt-6 lg:mt-0">
-                <div className="relative group overflow-hidden rounded-md">
-                  <img
+                <div className="relative group overflow-hidden rounded-md h-48">
+                  <Image
                     src={edu.image}
                     alt={edu.institution}
-                    className="w-full h-48 object-cover grayscale group-hover:grayscale-0 transition duration-500"
+                    layout="fill"
+                    objectFit="cover"
+                    className="grayscale group-hover:grayscale-0 transition duration-500"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent text-white p-3 text-sm font-medium">
                     {edu.institution}

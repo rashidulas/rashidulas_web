@@ -1,6 +1,7 @@
 "use client";
 
 import { MapPin } from "lucide-react";
+import Image from "next/image";
 
 interface ExperienceItem {
   title: string;
@@ -81,7 +82,6 @@ export function ExperienceSection() {
                         : "lg:pl-16 lg:col-start-2"
                     }`}
                   >
-                    {/* Date */}
                     <div
                       className={`${
                         isEven ? "lg:justify-end" : ""
@@ -92,7 +92,6 @@ export function ExperienceSection() {
                       </div>
                     </div>
 
-                    {/* Title, Company, Location */}
                     <div className="space-y-3">
                       <h3 className="text-3xl font-bold">{exp.title}</h3>
                       <h4 className="text-xl text-gray-300">{exp.company}</h4>
@@ -106,12 +105,10 @@ export function ExperienceSection() {
                       </div>
                     </div>
 
-                    {/* Description */}
                     <p className="text-gray-300 leading-relaxed text-lg max-w-lg">
                       {exp.description}
                     </p>
 
-                    {/* Tech Stack */}
                     <div
                       className={`flex flex-wrap gap-3 ${
                         isEven ? "lg:justify-end" : ""
@@ -142,11 +139,14 @@ export function ExperienceSection() {
                       <div className="absolute -top-6 -right-6 w-20 h-20 bg-white/10 transform rotate-45" />
 
                       {/* Image */}
-                      <img
-                        src={exp.image}
-                        alt={exp.company}
-                        className="relative w-full h-80 object-cover grayscale group-hover:grayscale-0 transition-all duration-700 border border-white/20"
-                      />
+                      <div className="relative w-full h-80">
+                        <Image
+                          src={exp.image}
+                          alt={exp.company}
+                          fill
+                          className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 border border-white/20 rounded"
+                        />
+                      </div>
 
                       {/* Overlay Text */}
                       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">

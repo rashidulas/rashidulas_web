@@ -1,14 +1,15 @@
-import { projects } from "@/data/projects";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import { projects } from "@/data/projects";
 
-// ✅ Accept `params` as a destructured argument directly
+// ✅ Next.js App Router: safely accept dynamic route param
 export default function ProjectPage({ params }: { params: { id: string } }) {
   const project = projects.find((p) => p.id === params.id);
   if (!project) return notFound();
 
   return (
     <div className="w-full bg-white text-gray-800 py-12 px-4 sm:px-6 lg:px-16 space-y-12">
+      {/* Hero Image */}
       <div className="w-full max-w-7xl mx-auto relative h-[500px]">
         <Image
           src={project.image}
@@ -18,6 +19,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
         />
       </div>
 
+      {/* Project Info */}
       <div className="w-full max-w-7xl mx-auto bg-white rounded-lg shadow p-6 sm:p-10">
         <h1 className="text-3xl sm:text-4xl font-bold mb-4 border-b pb-2">
           {project.title}
@@ -27,6 +29,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
         </p>
       </div>
 
+      {/* Awards Section */}
       {Array.isArray(project.awards) && project.awards.length > 0 && (
         <div className="w-full max-w-7xl mx-auto bg-white rounded-lg shadow p-6 sm:p-10">
           <h2 className="text-2xl font-semibold mb-4 border-b pb-2">
@@ -40,6 +43,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
         </div>
       )}
 
+      {/* Devpost Link */}
       {project.devpost && (
         <div className="w-full max-w-7xl mx-auto bg-white rounded-lg shadow p-6 sm:p-10">
           <h2 className="text-2xl font-semibold mb-4 border-b pb-2">Devpost</h2>
@@ -54,6 +58,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
         </div>
       )}
 
+      {/* Future Plan */}
       {project.futurePlan && (
         <div className="w-full max-w-7xl mx-auto bg-white rounded-lg shadow p-6 sm:p-10">
           <h2 className="text-2xl font-semibold mb-4 border-b pb-2">
@@ -66,4 +71,11 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
       )}
     </div>
   );
+}
+
+// ✅ generateStaticParams for SSG routes
+export async function generateStaticParams() {
+  return projects.map((project) => ({
+    id: project.id,
+  }));
 }

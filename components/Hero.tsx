@@ -30,10 +30,10 @@ export default function Hero() {
           />
         </div>
         <h1 className="text-2xl md:text-4xl font-bold">
-          Hello I'm Md Rashidul Alam Sami
+          Hello I&apos;m Md Rashidul Alam Sami
         </h1>
         <p className="text-base md:text-lg mt-2">
-          I'm a passionate Software Engineer
+          I&apos;m a passionate Software Engineer
         </p>
       </div>
     </section>

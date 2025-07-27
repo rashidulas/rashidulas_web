@@ -1,4 +1,3 @@
-import { Metadata } from "next";
 import { projects } from "@/data/projects";
 import { notFound } from "next/navigation";
 import Image from "next/image";

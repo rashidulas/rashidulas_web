@@ -11,7 +11,7 @@ const navLinks = [
   { id: "home", title: "HOME", url: "/" },
   { id: "about", title: "ABOUT ME", url: "/about" },
   { id: "portfolio", title: "PORTFOLIO", url: "/portfolio" },
-  { id: "resume", title: "RESUME", url: "/resume.pdf", external: true },
+  { id: "notebook", title: "NOTEBOOK", url: "/notebook" },
   { id: "contacts", title: "CONTACTS", url: "/contacts" },
 ];
 

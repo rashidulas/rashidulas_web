@@ -1,17 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Special_Elite } from "next/font/google";
+import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
+import { extractRouterConfig } from "uploadthing/server";
+import { ourFileRouter } from "@/app/api/uploadthing/core";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const specialElite = Special_Elite({
+  variable: "--font-special-elite",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -27,9 +26,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${specialElite.variable} antialiased`}
         suppressHydrationWarning
       >
+        <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
         <Navbar />
         {children}
         <Footer />

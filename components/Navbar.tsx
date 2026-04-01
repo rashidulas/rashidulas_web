@@ -47,7 +47,6 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* Logo */}
         <Link href="/">
           <div
             className={`text-xl font-bold ${
@@ -62,27 +61,14 @@ export default function Navbar() {
         <ul className="hidden sm:flex space-x-8 items-center">
           {navLinks.map((link) => (
             <li key={link.id}>
-              {link.external ? (
-                <a
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`text-sm font-medium transition-colors ${navTextColor(
-                    link.url
-                  )}`}
-                >
-                  {link.title}
-                </a>
-              ) : (
-                <Link
-                  href={link.url}
-                  className={`text-sm font-medium transition-colors ${navTextColor(
-                    link.url
-                  )}`}
-                >
-                  {link.title}
-                </Link>
-              )}
+              <Link
+                href={link.url}
+                className={`text-sm font-medium transition-colors ${navTextColor(
+                  link.url
+                )}`}
+              >
+                {link.title}
+              </Link>
             </li>
           ))}
           <li className="flex space-x-4">
@@ -117,29 +103,15 @@ export default function Navbar() {
           <ul className="flex flex-col space-y-4">
             {navLinks.map((link) => (
               <li key={link.id}>
-                {link.external ? (
-                  <a
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`block text-sm font-medium ${
-                      pathname === link.url ? "text-black" : "text-gray-700"
-                    }`}
-                    onClick={() => setToggle(false)}
-                  >
-                    {link.title}
-                  </a>
-                ) : (
-                  <Link
-                    href={link.url}
-                    className={`block text-sm font-medium ${
-                      pathname === link.url ? "text-black" : "text-gray-700"
-                    }`}
-                    onClick={() => setToggle(false)}
-                  >
-                    {link.title}
-                  </Link>
-                )}
+                <Link
+                  href={link.url}
+                  className={`block text-sm font-medium ${
+                    pathname === link.url ? "text-black" : "text-gray-700"
+                  }`}
+                  onClick={() => setToggle(false)}
+                >
+                  {link.title}
+                </Link>
               </li>
             ))}
             <li className="flex space-x-4">

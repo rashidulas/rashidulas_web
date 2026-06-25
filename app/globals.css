@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+  --font-serif: var(--font-serif), Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+:root {
+  --background: #fbfbfb;
+  --foreground: #111111;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Custom Utilities for Technical Blueprint Style */
+
+/* Technical Dashed Border */
+.tech-border-dashed {
+  border: 1px dashed #e2e8f0;
+}
+
+/* Technical Corner Brackets */
+.tech-bracket-tl {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid #94a3b8;
+  border-left: 1px solid #94a3b8;
+}
+
+.tech-bracket-tr {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid #94a3b8;
+  border-right: 1px solid #94a3b8;
+}
+
+.tech-bracket-bl {
+  position: absolute;
+  bottom: -1px;
+  left: -1px;
+  width: 8px;
+  height: 8px;
+  border-bottom: 1px solid #94a3b8;
+  border-left: 1px solid #94a3b8;
+}
+
+.tech-bracket-br {
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 8px;
+  height: 8px;
+  border-bottom: 1px solid #94a3b8;
+  border-right: 1px solid #94a3b8;
+}
+
+/* Technical Plus-sign Markers at Corners */
+.tech-plus-tl::before, .tech-plus-tl::after {
+  content: '';
+  position: absolute;
+  background-color: #94a3b8;
+}
+.tech-plus-tl::before {
+  top: -4px;
+  left: 0px;
+  width: 1px;
+  height: 9px;
+}
+.tech-plus-tl::after {
+  top: 0px;
+  left: -4px;
+  width: 9px;
+  height: 1px;
+}
+
+.tech-plus-tr::before, .tech-plus-tr::after {
+  content: '';
+  position: absolute;
+  background-color: #94a3b8;
+}
+.tech-plus-tr::before {
+  top: -4px;
+  right: 0px;
+  width: 1px;
+  height: 9px;
+}
+.tech-plus-tr::after {
+  top: 0px;
+  right: -4px;
+  width: 9px;
+  height: 1px;
+}
+
+.tech-plus-bl::before, .tech-plus-bl::after {
+  content: '';
+  position: absolute;
+  background-color: #94a3b8;
+}
+.tech-plus-bl::before {
+  bottom: -4px;
+  left: 0px;
+  width: 1px;
+  height: 9px;
+}
+.tech-plus-bl::after {
+  bottom: 0px;
+  left: -4px;
+  width: 9px;
+  height: 1px;
+}
+
+.tech-plus-br::before, .tech-plus-br::after {
+  content: '';
+  position: absolute;
+  background-color: #94a3b8;
+}
+.tech-plus-br::before {
+  bottom: -4px;
+  right: 0px;
+  width: 1px;
+  height: 9px;
+}
+.tech-plus-br::after {
+  bottom: 0px;
+  right: -4px;
+  width: 9px;
+  height: 1px;
+}
+
+/* Custom dot animations for ASCII World Map */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.1); }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 4s infinite ease-in-out;
+}
+
+/* Hide scrollbar but keep functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

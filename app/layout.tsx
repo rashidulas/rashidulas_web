@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,7 +21,7 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "Stackgrid | The All New AI Era",
-  description: "Make custom AI agents and secure data pipelines to eliminate manual workflows.",
+  description: "Make custom AI agents and secure data pipelines to eliminate your manual workflows.",
 };
 
 export default function RootLayout({
@@ -32,7 +34,11 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#fbfbfb] text-[#111111]">{children}</body>
+      <body className="min-h-full flex flex-col bg-[#fbfbfb] text-[#111111]">
+        <Header />
+        <div className="flex-grow">{children}</div>
+        <Footer />
+      </body>
     </html>
   );
 }
